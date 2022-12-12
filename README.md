@@ -17,3 +17,4 @@ Informazioni riguardanti CockRoachDB
   - Il nodo gateway comunica comunica con il nodo leaseholder per questo intervallo (3).
   - Il nodo leaseholder ritornerà i dati al nodo gateway (3).
   - Il nodo gateway ritornerà i dati al client.
+  - <img src="https://github.com/FabioR1995/CockRoachDB/blob/main/Immagini/cluster_architecture.png" width="400" height="350">
