@@ -18,3 +18,6 @@ Informazioni riguardanti CockRoachDB
   - Il nodo leaseholder ritornerà i dati al nodo gateway (3).
   - Il nodo gateway ritornerà i dati al client.
   - <img src="https://github.com/FabioR1995/CockRoachDB/blob/main/Immagini/cluster_architecture.png" width="400" height="350">
+- Sotto il cofano, i dati della tabelle di CockRoachDB sono organizzate come coppie K-V all' interno del sistema di memorizzazione.
+  - La chiave della K-V corrisponde alla primary key della tabella.
+  - il valore della K-V corrisponde alla rappresentazione binaria di tutti i valori delle colonne di quella riga.
