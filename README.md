@@ -19,10 +19,10 @@ Informazioni riguardanti CockRoachDB
   - Il nodo gateway ritornerà i dati al client.
   - <img src="https://github.com/FabioR1995/CockRoachDB/blob/main/Immagini/cluster_architecture.png" width="400" height="350">
 - Sotto il cofano, i dati della tabelle di CockRoachDB sono organizzate come coppie K-V all' interno del sistema di memorizzazione.
-  - La chiave della K-V corrisponde alla primary key della tabella.
-  - il valore della K-V corrisponde alla rappresentazione binaria di tutti i valori delle colonne di quella riga.
 - **CockRoachDB SQL Layer**
   - <img src="https://github.com/FabioR1995/CockRoachDB/blob/main/Immagini/stack_cockroach.png" width="450" height="350">
   - Lo strato SQL è responsabile di gestire le richieste SQL e riceve le richieste attraverso il **Postgres wire protocol**. Per l' esattezza fa il parsing (verifica la accuratezza sintaticca e i permessi necessari per eseguire un tipo di azione), ottimizza (viene creato un piano di esecuzione che poi viene ottimizzato) e mappa le richieste SQL in richieste K-V per il sottosistema.
 - **Tabelle rappresentate in una K-V store**
-  - <img src="https://github.com/FabioR1995/CockRoachDB/blob/main/Immagini/k-v_store.png" width="450" height="200">     
+  - <img src="https://github.com/FabioR1995/CockRoachDB/blob/main/Immagini/k-v_store.png" width="450" height="200">
+  - La chiave della K-V corrisponde alla primary key della tabella.
+  - il valore della K-V corrisponde alla rappresentazione binaria di tutti i valori delle colonne di quella riga.   
