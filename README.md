@@ -26,5 +26,5 @@ Informazioni riguardanti CockRoachDB
   - La chiave della K-V corrisponde alla primary key della tabella.
   - il valore della K-V corrisponde alla rappresentazione binaria di tutti i valori delle colonne di quella riga.
   - <img src="https://github.com/FabioR1995/CockRoachDB/blob/main/Immagini/k-v_store.png" width="450" height="200">
-  - E' possibile anche indirizzare cockroach a gruppi di colonne in separate voci K-V.
+  - E' possibile anche indirizzare cockroach a gruppi di colonne in separate voci K-V (**column families**).
     - <img src="https://github.com/FabioR1995/CockRoachDB/blob/main/Immagini/column_families.png" width="450" height="350"> 
