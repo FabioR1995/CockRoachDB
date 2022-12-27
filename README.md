@@ -28,3 +28,12 @@ Informazioni riguardanti CockRoachDB
   - <img src="https://github.com/FabioR1995/CockRoachDB/blob/main/Immagini/k-v_store.png" width="450" height="200">
   - E' possibile anche indirizzare cockroach a gruppi di colonne in separate voci K-V (**column families**).
     - <img src="https://github.com/FabioR1995/CockRoachDB/blob/main/Immagini/column_families.png" width="450" height="350"> 
+  -
+- La definizione dello schema per le tabelle (e gli indici ad essi associati), vengono memorizzati in uno speciale keyspace chiamato table descriptor.
+  - Per questioni di performance la table descriptor viene memorizzata in ogni nodo.
+  - La table descriptor viene usata per fare parsing e ottimizzare i SQL e costruire correttamente le operazioni K-V per una tabella.
+  - CockRoachDB supporta le modifiche online dei cambiamenti degli schema utilizzando ALTER TABLE, CREATE INDEX e altri comandi.
+    - Lo schema viene cambiato in fasi discrete, in modo tale che venga introdotto mentre è ancora in uso lo schema precedente, operando quindi come cambiamenti in background.
+  - I cambiamenti di uno schema potrebbero involvere in cambiamenti sui dati delle tabelle (aggiunta o rimozione delle colonne) e/o con la creazione delle strutture di nuovi indici. Quando tutte le tabelle di tutte le istanze sono memorizzate in concomitanza ai requisiti del nuovo schema, allora tutti i nodi switcheranno al nuovo schema e permetteranno la lettura/scrittura delle tabelle usando il nuovo schema.
+  
+    
