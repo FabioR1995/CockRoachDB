@@ -35,5 +35,10 @@ Informazioni riguardanti CockRoachDB
   - CockRoachDB supporta le modifiche online dei cambiamenti degli schema utilizzando ALTER TABLE, CREATE INDEX e altri comandi.
     - Lo schema viene cambiato in fasi discrete, in modo tale che venga introdotto mentre è ancora in uso lo schema precedente, operando quindi come cambiamenti in background.
   - I cambiamenti di uno schema potrebbero involvere in cambiamenti sui dati delle tabelle (aggiunta o rimozione delle colonne) e/o con la creazione delle strutture di nuovi indici. Quando tutte le tabelle di tutte le istanze sono memorizzate in concomitanza ai requisiti del nuovo schema, allora tutti i nodi switcheranno al nuovo schema e permetteranno la lettura/scrittura delle tabelle usando il nuovo schema.
+- **Transiction Layer CockRoachDB**
+  - E' lo strato responsabile per mantenere la atomicità delle transazioni assicurando che tutte le transazioni siano committate o abortite.
+  - da riempire con gli appunti scritti nel pc aziendale.
+- **Principi MVCC**
+  -   
   
     
