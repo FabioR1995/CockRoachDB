@@ -45,4 +45,5 @@ Informazioni riguardanti CockRoachDB
   -   Al tempo t3, la sessione s1 legge nuovamente la riga, ma visto che la sessione s2 non la ha ancora committata viene letta la versione 1. (4)
   -   Dopo il commit dalla sessione 2 (5), la sessione 1 potrà ora leggere la nuova versione v2 della riga (6).
   -   <img src="https://github.com/FabioR1995/CockRoachDB/blob/main/Immagini/mvcc.png" width="450" height="350">
+-   
     
