@@ -39,6 +39,10 @@ Informazioni riguardanti CockRoachDB
   - E' lo strato responsabile per mantenere la atomicità delle transazioni assicurando che tutte le transazioni siano committate o abortite.
   - da riempire con gli appunti scritti nel pc aziendale.
 - **Principi MVCC**
-  -   al tempo t1, viene letto dalla sessione s1 la riga r2 e acceduta la versione v1 della riga.
-  
+  -   al tempo t1, viene letto dalla sessione s1 la riga r2 e acceduta la versione v1 della riga. (1)
+  -   Al tempo t2, un' altra sessione database (s2) aggiorna la riga creando la seconda versione di quella riga. (2)
+  -   viene creata la seconda versione di quella riga. (3)
+  -   Al tempo t3, la sessione s1 legge nuovamente la riga, ma visto che la sessione s2 non la ha ancora committata viene letta la versione 1. (4)
+  -   Dopo il commit dalla sessione 2 (5), la sessione 1 potrà ora leggere la nuova versione v2 della riga (6).
+  -   
     
