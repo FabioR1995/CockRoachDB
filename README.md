@@ -39,6 +39,6 @@ Informazioni riguardanti CockRoachDB
   - E' lo strato responsabile per mantenere la atomicità delle transazioni assicurando che tutte le transazioni siano committate o abortite.
   - da riempire con gli appunti scritti nel pc aziendale.
 - **Principi MVCC**
-  -   
+  -   al tempo t1, viene letto dalla sessione s1 la riga r2 e acceduta la versione v1 della riga.
   
     
