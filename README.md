@@ -27,8 +27,7 @@ Informazioni riguardanti CockRoachDB
   - il valore della K-V corrisponde alla rappresentazione binaria di tutti i valori delle colonne di quella riga.
   - <img src="https://github.com/FabioR1995/CockRoachDB/blob/main/Immagini/k-v_store.png" width="450" height="200">
   - E' possibile anche indirizzare cockroach a gruppi di colonne in separate voci K-V (**column families**).
-    - <img src="https://github.com/FabioR1995/CockRoachDB/blob/main/Immagini/column_families.png" width="450" height="350"> 
-  -
+    - <img src="https://github.com/FabioR1995/CockRoachDB/blob/main/Immagini/column_families.png" width="450" height="350">
 - La definizione dello schema per le tabelle (e gli indici ad essi associati), vengono memorizzati in uno speciale keyspace chiamato table descriptor.
   - Per questioni di performance la table descriptor viene memorizzata in ogni nodo.
   - La table descriptor viene usata per fare parsing e ottimizzare i SQL e costruire correttamente le operazioni K-V per una tabella.
@@ -39,14 +38,14 @@ Informazioni riguardanti CockRoachDB
   - E' lo strato responsabile per mantenere la atomicità delle transazioni assicurando che tutte le transazioni siano committate o abortite.
   - da riempire con gli appunti scritti nel pc aziendale.
 - **Principi MVCC**
-  -   al tempo t1, viene letto dalla sessione s1 la riga r2 e acceduta la versione v1 della riga. (1)
-  -   Al tempo t2, un' altra sessione database (s2) aggiorna la riga creando la seconda versione di quella riga. (2)
-  -   viene creata la seconda versione di quella riga. (3)
-  -   Al tempo t3, la sessione s1 legge nuovamente la riga, ma visto che la sessione s2 non la ha ancora committata viene letta la versione 1. (4)
-  -   Dopo il commit dalla sessione 2 (5), la sessione 1 potrà ora leggere la nuova versione v2 della riga (6).
-  -   <img src="https://github.com/FabioR1995/CockRoachDB/blob/main/Immagini/mvcc.png" width="450" height="350">
-  -   write intents
-    -   Durante una fase iniziale del processo di transazione, quando non sappiamo se la transazione avverrà con successo, il nodo portatore scriverà questo tentativo di scrittura sul valore che è stato tentato di modificare.
-    -  Il write intent (intento di scrittura) è uno speciale costrutto MVCC, il quale viene marchiato come provvisorio.
+  - al tempo t1, viene letto dalla sessione s1 la riga r2 e acceduta la versione v1 della riga. (1)
+  - Al tempo t2, un' altra sessione database (s2) aggiorna la riga creando la seconda versione di quella riga. (2)
+  - viene creata la seconda versione di quella riga. (3)
+  - Al tempo t3, la sessione s1 legge nuovamente la riga, ma visto che la sessione s2 non la ha ancora committata viene letta la versione 1. (4)
+  - Dopo il commit dalla sessione 2 (5), la sessione 1 potrà ora leggere la nuova versione v2 della riga (6).
+  - <img src="https://github.com/FabioR1995/CockRoachDB/blob/main/Immagini/mvcc.png" width="450" height="350">
+  - **write intents**
+    - Durante una fase iniziale del processo di transazione, quando non sappiamo se la transazione avverrà con successo, il nodo portatore scriverà questo tentativo di scrittura sul valore che è stato tentato di modificare.
+    - Il write intent (intento di scrittura) è uno speciale costrutto MVCC, il quale viene marchiato come provvisorio.
     
     
