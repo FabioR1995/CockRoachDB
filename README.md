@@ -46,7 +46,7 @@ Informazioni riguardanti CockRoachDB
   -   Dopo il commit dalla sessione 2 (5), la sessione 1 potrà ora leggere la nuova versione v2 della riga (6).
   -   <img src="https://github.com/FabioR1995/CockRoachDB/blob/main/Immagini/mvcc.png" width="450" height="350">
   -   write intents
-    -  Durante una fase iniziale del processo di transazione, quando non sappiamo se la transazione avverrà con successo, il nodo portatore scriverà questo tentativo di scrittura sul valore che è stato tentato di modificare.
+    -   Durante una fase iniziale del processo di transazione, quando non sappiamo se la transazione avverrà con successo, il nodo portatore scriverà questo tentativo di scrittura sul valore che è stato tentato di modificare.
     -  Il write intent (intento di scrittura) è uno speciale costrutto MVCC, il quale viene marchiato come provvisorio.
     
     
